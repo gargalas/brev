@@ -1,5 +1,5 @@
-// For local development - change this to your local IP when using Netlify frontend
-const API_BASE_URL = import.meta.env.PROD ? 'http://192.168.1.129:5000' : '/api';
+// For remote access via Cloudflare tunnel
+const API_BASE_URL = import.meta.env.PROD ? 'https://exceed-associate-roy-industrial.trycloudflare.com' : '/api';
 
 export interface SearchResult {
   pmid: string;
