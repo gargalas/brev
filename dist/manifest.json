@@ -1,0 +1,20 @@
+{
+  "name": "Brev.md - Medical Knowledge Made Brief",
+  "short_name": "Brev.md",
+  "description": "Personalized medical articles and research updates for healthcare professionals",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0066cc",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/src/assets/brev-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "education", "health"],
+  "lang": "en"
+}

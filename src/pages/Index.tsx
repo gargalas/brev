@@ -5,18 +5,13 @@ const Index = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is already logged in
-    const isLoggedIn = localStorage.getItem('auth_token');
+    // Check if user has completed onboarding
     const isOnboarded = localStorage.getItem('userOnboarded');
     
-    if (isLoggedIn) {
-      if (isOnboarded) {
-        navigate('/feed');
-      } else {
-        navigate('/onboarding');
-      }
+    if (isOnboarded) {
+      navigate('/feed');
     } else {
-      navigate('/login');
+      navigate('/onboarding');
     }
   }, [navigate]);
 
