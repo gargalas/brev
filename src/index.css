@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Grey/White Design System - Serif Typography */
+
+@layer base {
+  :root {
+    /* Core grey/white palette */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --surface-elevated: 0 0% 100%;
+
+    /* Professional grey brand colors */
+    --primary: 0 0% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 0 0% 95%;
+    --primary-dark: 0 0% 15%;
+
+    /* Grey secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 25%;
+    --secondary-hover: 0 0% 92%;
+
+    /* Neutral system */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --subtle: 0 0% 98%;
+
+    /* Interactive states */
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 25%;
+    --hover: 0 0% 94%;
+
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --like: 0 72% 51%;
+    --save: 142 76% 36%;
+
+    /* Form elements */
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --input-border: 0 0% 85%;
+    --ring: 0 0% 25%;
+
+    /* Shadows for clean minimal feel */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.03);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.06), 0 2px 4px -2px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.08), 0 4px 6px -4px hsl(0 0% 0% / 0.08);
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.04);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--card)), hsl(var(--subtle)));
+
+    /* Radius system */
+    --radius: 8px;
+    --radius-sm: 6px;
+    --radius-lg: 12px;
+    --radius-full: 9999px;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  /* iOS-style safe areas */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer components {
+  /* iOS-style card */
+  .card-ios {
+    @apply bg-card rounded-[var(--radius)] border-0;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Bubble button for specialty selection */
+  .bubble-button {
+    @apply relative px-4 py-3 rounded-[var(--radius-full)] border-2 border-border bg-card text-sm font-medium transition-all duration-200;
+    @apply hover:border-primary hover:bg-accent active:scale-95;
+  }
+
+  .bubble-button.selected {
+    @apply border-primary bg-primary text-primary-foreground;
+  }
+
+  /* iOS-style navigation */
+  .nav-ios {
+    @apply fixed bottom-0 left-0 right-0 bg-card border-t border-border;
+    box-shadow: 0 -2px 10px hsl(215 25% 27% / 0.1);
+    backdrop-filter: blur(20px);
+  }
+
+  /* Article card */
+  .article-card {
+    @apply card-ios p-0 overflow-hidden;
+    @apply hover:shadow-lg transition-shadow duration-200;
+  }
+
+  /* Action buttons */
+  .action-button {
+    @apply flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-200;
+    @apply hover:bg-hover active:scale-95;
+  }
+
+  .action-button.liked {
+    @apply bg-like/10 text-like hover:bg-like/20;
+  }
+
+  .action-button.saved {
+    @apply bg-save/10 text-save hover:bg-save/20;
+  }
+
+  /* Loading states */
+  .loading-shimmer {
+    @apply animate-pulse bg-muted rounded-md;
+  }
+
+  /* iOS-style button */
+  .button-ios {
+    @apply px-6 py-3 rounded-[var(--radius)] font-medium transition-all duration-200;
+    @apply active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .button-primary {
+    @apply button-ios bg-primary text-primary-foreground;
+    @apply hover:bg-primary-dark active:bg-primary-dark;
+  }
+
+  .button-secondary {
+    @apply button-ios bg-secondary text-secondary-foreground border border-border;
+    @apply hover:bg-secondary-hover;
+  }
+}
