@@ -1,5 +1,5 @@
-// For remote access via Cloudflare tunnel
-const API_BASE_URL = import.meta.env.PROD ? 'https://exceed-associate-roy-industrial.trycloudflare.com' : '/api';
+// For remote access via ngrok tunnel
+const API_BASE_URL = import.meta.env.PROD ? 'https://soupy-elke-hubristically.ngrok-free.dev' : '/api';
 
 export interface SearchResult {
   pmid: string;
